@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "incolume.py.fastapi.legis"
-version = "0.2.0a1"
+version = "0.2.0a0"
 description = "API em FastAPI de acesso aos Atos Jurídicos"
 authors = ["britodfbr <britodfbr@gmail.com>"]
 readme = "README.md"
@@ -31,7 +31,7 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.taskipy.tasks]
-prerelease={cmd='v=$(poetry version prerelease) && poetry run pytest -xv --cov-report html:coverage_report/html --cov-report xml:coverage_report/xml/cov.xml && git ci -m "$$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
-patch={cmd='v=$(poetry version patch) && poetry run pytest -xv --cov-report html:coverage_report/html --cov-report xml:coverage_report/xml/cov.xml && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version patch'}
-preminor={cmd='v=$(poetry version preminor) && poetry run pytest -xv --cov-report html:coverage_report/html --cov-report xml:coverage_report/xml/cov.xml && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
-premajor={cmd='v=$(poetry version premajor) && poetry run pytest -xv --cov-report html:coverage_report/html --cov-report xml:coverage_report/xml/cov.xml && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
+prerelease={cmd='v=$(poetry version prerelease) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
+patch={cmd='v=$(poetry version patch) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version patch'}
+preminor={cmd='v=$(poetry version preminor) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
+premajor={cmd='v=$(poetry version premajor) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
