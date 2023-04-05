@@ -30,3 +30,6 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
+preminor = {help='Increment Version preminor', cmd="v=$(poetry version preminor) && poetry run python incolume/py/fastapi/legis/__init__.py && git ci -m $(v) pyproject.toml $(find incolume* -name version.txt)"}
+premajor = {help='Increment Version premajor', cmd="v=$(poetry version preminor) && poetry run python incolume/py/fastapi/legis/__init__.py && git ci -m $(v) pyproject.toml $(find incolume* -name version.txt)"}
+prerelease = {help='Increment Version prerelease', cmd="v=$(poetry version preminor) && poetry run python incolume/py/fastapi/legis/__init__.py && git ci -m $(v) pyproject.toml $(find incolume* -name version.txt)"}
