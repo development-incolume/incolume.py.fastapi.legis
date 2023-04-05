@@ -1,6 +1,8 @@
 """Principal Module."""
 import logging
 from pathlib import Path
+from config import settings
+
 try:
     from tomllib import load
 except (ModuleNotFoundError, ImportError):
