@@ -1,0 +1,1 @@
+DB_URL= 'postgresql+psycopg2://localhost/main?user=admin&password=pwadmin'
