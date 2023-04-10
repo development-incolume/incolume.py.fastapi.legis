@@ -1,10 +1,11 @@
 import re
+from typing import Optional
 from pydantic import BaseModel, validator
 
 
-class User(BaseModel):
+class UserBase(BaseModel):
     username: str
-    password: str
+    pw_hash: Optional[str]
 
     @validator('username')
     def check_username(cls, value):
@@ -15,5 +16,6 @@ class User(BaseModel):
     class Config:
         orm_mode = True
     
-
+class UserIn(UserBase):
+    password: str
 

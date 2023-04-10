@@ -5,7 +5,11 @@ from config import settings
 import logging
 
 
+logging.debug(f'{settings.DB_URL=}')
+
 DB_URL: Final = settings.DB_URL
+logging.debug(f'{DB_URL=}')
+
 engine = create_engine(DB_URL, pool_pre_ping=True)
 Session = sessionmaker(bind=engine)
 

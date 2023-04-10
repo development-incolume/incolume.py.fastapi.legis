@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from incolume.py.fastapi.legis.routers.auth import router as user_router
+
+
 app = FastAPI()
 
 
