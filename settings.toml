@@ -1,5 +1,19 @@
-ALGORITHM='HS256'
-POSTGRES_DB="main"
-POSTGRES_USER="admin"
-POSTGRES_PASSWORD="pwadmin"
-DB_URL='postgresql+psycopg2://localhost/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}'
+[default]
+ALGORITHM = 'HS256'
+# openssl rand -hex 64
+SECRET_KEY='0bc92d4f31500f1cf8fa53cf3c44dac5a804cc3a9534bf65aaf6db6ce8ba26c34d1da5c95a148b05595ef8127e78494ab2a451aefb812dd86ed5d90831d40c41'
+
+[dev0]
+POSTGRES_DB = "main"
+POSTGRES_USER = "admin"
+POSTGRES_PASSWORD = "pwadmin"
+DB_URL = 'postgresql+psycopg2://localhost/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}'
+
+[development]
+DB_URL = 'sqlite:///./dbdev.sqlite'
+
+[testing]
+DB_URL = 'sqlite:///./dbtesting.sqlite'
+SECRET_KEY='secret-key'
+
+[production]
