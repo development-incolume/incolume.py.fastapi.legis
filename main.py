@@ -1,4 +1,5 @@
 import uvicorn
+import logging
 from incolume.py.fastapi.legis.server import app
 
 
