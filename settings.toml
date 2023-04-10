@@ -1,1 +1,5 @@
-DB_URL= 'postgresql+psycopg2://localhost/main?user=admin&password=pwadmin'
+ALGORITHM=HS256
+DB_URL='postgresql+psycopg2://localhost/main?user=admin&password=pwadmin'
+POSTGRES_DB=main
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=pwadmin

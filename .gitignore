@@ -1,3 +1,6 @@
+# In this project
+infra/sgbd/
+
 # Arquivos diversos
 geckodriver
 *.[Cc][Ss][Vv]
