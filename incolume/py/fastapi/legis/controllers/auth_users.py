@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 from incolume.py.fastapi.legis.db.models.user import UserModel
-from incolume.py.fastapi.legis.schemas.user import User as UserSchema
+from incolume.py.fastapi.legis.schemas.user import UserIn
 from passlib.context import CryptContext
 from fastapi.exceptions import HTTPException
 from fastapi import status
@@ -18,7 +18,7 @@ class User:
     def __init__(self, db_session: Session) -> None:
         self.db_session = db_session
 
-    def register(self, user: UserSchema)->UserModel:
+    def register(self, user: UserIn)->UserModel:
         new_user = UserModel(
             username=user.username,
             password=crypt_context.hash(user.password)

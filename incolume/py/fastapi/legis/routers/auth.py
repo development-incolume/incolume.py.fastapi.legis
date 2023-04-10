@@ -6,7 +6,7 @@ from incolume.py.fastapi.legis.controllers.auth_users import User
 from incolume.py.fastapi.legis.schemas.user import User as UserSchema
 
 
-router = APIRouter(prefix='/user')
+router = APIRouter(prefix='/auth')
 
 
 @router.post('/signin', status_code=status.HTTP_201_CREATED, response_model=UserSchema)
